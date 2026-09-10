@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>William Cranston</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="noise"></div>
+
+    <header class="nav">
+      <div class="nav-top">
+        <div class="nav-left">
+          <div class="socials">
+            <div class="menu-link">
+              <a href="https://github.com/devster3000" target="_blank"
+                >GitHub</a
+              >
+            </div>
+            <div class="menu-link">
+              <a href="https://instagram.com/coolmccools0n" target="_blank"
+                >Instagram</a
+              >
+            </div>
+          </div>
+
+          <button class="menu-toggle" aria-label="Menu">☰</button>
+        </div>
+
+        <div class="nav-center">
+          <div class="menu-link">
+            <a href="/projects.html" class="projects-btn" id="nav-title"
+              >Projects</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="mobile-menu">
+        <div class="menu-links">
+          <div class="menu-link">
+            <a href="https://github.com/devster3000" target="_blank">GitHub</a>
+          </div>
+          <div class="menu-link">
+            <a href="https://instagram.com/coolmccools0n" target="_blank"
+              >Instagram</a
+            >
+          </div>
+        </div>
+
+        <div class="menu-divider"></div>
+      </div>
+    </header>
+
+    <div class="wrap">
+      <main class="hero">
+        <section class="glass">
+          <h1>Sometimes making things</h1>
+
+          <p>
+            Idfk. I just make stuff sometimes. Maybe its useful maybe its not
+          </p>
+
+          <div class="actions">
+            <a class="btn primary" href="https://github.com/devster3000">
+              See my GitHub
+            </a>
+
+            <a class="btn secondary" href="https://youtu.be/dQw4w9WgXcQ">
+              See where this goes
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer id="foot">
+        <span>© 2026 William Cranston</span>
+      </footer>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggle = document.querySelector(".menu-toggle");
+        const mobileMenu = document.querySelector(".mobile-menu");
+        const title = document.getElementById("nav-title");
+
+        let open = false;
+
+        title.style.pointerEvents = "auto";
+
+        toggle.addEventListener("click", () => {
+          open = !open;
+
+          mobileMenu.classList.toggle("show");
+
+          // icon swap
+          toggle.textContent = open ? "✕" : "☰";
+
+          // title swap
+          title.textContent = open ? "Links" : "Projects";
+
+          if (open) {
+            title.style.pointerEvents = "none";
+          } else {
+            title.style.pointerEvents = "auto";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
