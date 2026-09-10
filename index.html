@@ -1,43 +1,344 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>William Cranston</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/styles.css" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fffbfe">
+  <meta name="color-scheme" content="light dark">
+  <title>Come back soon</title>
+  <link rel="icon" type="image/png" href="/assets/logo/favicon.png">
 
-    <link rel="icon" type="image/x-icon" href="/assets/logo/favicon.png">
-  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-  <body>
-    <header>
-        <nav>
-          <ul class="left-buttons">
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">LinkedIn</a></li>
-            <li><a href="#">GitHub</a></li>
-          </ul>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fffbfe;
+      color: #1d1b20;
+      overflow-x: hidden;
+    }
 
-          <ul class="right-buttons">
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">About</a></li>
-          </ul>
-        </nav>
-    </header>
+    .page {
+      position: relative;
+      min-height: 100vh;
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
 
+    /* Decorative M3E-style shapes */
 
-    <div class="content">
-      <h1 class="greeting-text" style="justify-content: start;">Hello, I'm Will,</h1>
-      <p class="subtitle-text">a developer proficient in HTML / CSS, JavaScript, Python, C and Kotlin</p>
+    .shape {
+      position: absolute;
+      z-index: 0;
+    }
 
-      
-    </div>
+    .circle-one {
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      background: #d0bcff;
+      top: -65px;
+      left: -55px;
+    }
 
-    
-    <footer>
-        <p>Test text</p>
-    </footer>
-  </body>
+    .circle-two {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: #b8f2e6;
+      right: 8%;
+      top: 7%;
+    }
 
+    .pill-one {
+      width: 270px;
+      height: 105px;
+      border-radius: 55px;
+      background: #ffd8e4;
+      transform: rotate(-25deg);
+      left: -90px;
+      bottom: 9%;
+    }
+
+    .pill-two {
+      width: 230px;
+      height: 95px;
+      border-radius: 50px;
+      background: #ffdf9e;
+      transform: rotate(28deg);
+      right: -70px;
+      bottom: 5%;
+    }
+
+    .square {
+      width: 95px;
+      height: 95px;
+      border-radius: 28px;
+      background: #cce8ff;
+      transform: rotate(18deg);
+      right: 15%;
+      bottom: 18%;
+    }
+
+    .small-circle {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: #e7d6ff;
+      left: 17%;
+      top: 16%;
+    }
+
+    .diamond {
+      width: 58px;
+      height: 58px;
+      border-radius: 20px;
+      background: #b9e6a9;
+      transform: rotate(45deg);
+      right: 25%;
+      top: 20%;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 760px);
+      padding: 48px;
+      background: rgba(255, 251, 254, 0.94);
+      border: 1px solid #e6e0e9;
+      border-radius: 48px;
+      box-shadow: 0 12px 32px rgba(45, 35, 55, 0.10);
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: #e8def8;
+      color: #4f378b;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 0.3px;
+      margin-bottom: 28px;
+    }
+
+    .badge-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #6750a4;
+    }
+
+    h1 {
+      margin: 0 auto 20px;
+      max-width: 650px;
+      font-size: clamp(48px, 8vw, 82px);
+      line-height: 0.98;
+      letter-spacing: -3px;
+      font-weight: 800;
+    }
+
+    .highlight {
+      color: #6750a4;
+    }
+
+    .footer {
+      margin-top: 28px;
+      font-size: 13px;
+      color: #79747e;
+    }
+
+    /* Adaptive dark mode */
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #141218;
+        color: #e6e1e9;
+      }
+
+      .circle-one {
+        background: #4f378b;
+      }
+
+      .circle-two {
+        background: #24544c;
+      }
+
+      .pill-one {
+        background: #633b4b;
+      }
+
+      .pill-two {
+        background: #604b22;
+      }
+
+      .square {
+        background: #31516a;
+      }
+
+      .small-circle {
+        background: #493b61;
+      }
+
+      .diamond {
+        background: #3d5b36;
+      }
+
+      .content {
+        background: rgba(30, 27, 34, 0.94);
+        border-color: #49454f;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+      }
+
+      .badge {
+        background: #332d42;
+        color: #d0bcff;
+      }
+
+      .badge-dot {
+        background: #d0bcff;
+      }
+
+      .highlight {
+        color: #d0bcff;
+      }
+
+      .footer {
+        color: #aaa4ad;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .page {
+        padding: 18px;
+      }
+
+      .content {
+        padding: 38px 24px;
+        border-radius: 36px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .circle-one {
+        width: 145px;
+        height: 145px;
+      }
+
+      .circle-two {
+        width: 85px;
+        height: 85px;
+      }
+
+      .pill-one {
+        width: 190px;
+        height: 75px;
+      }
+
+      .pill-two {
+        width: 170px;
+        height: 70px;
+      }
+
+      .square {
+        width: 65px;
+        height: 65px;
+        border-radius: 20px;
+      }
+
+      .small-circle {
+        left: 5%;
+        top: 23%;
+      }
+
+      .diamond {
+        right: 8%;
+        top: 16%;
+        width: 42px;
+        height: 42px;
+        border-radius: 20px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .page {
+        padding: 12px;
+      }
+
+      .content {
+        padding: 34px 20px;
+        border-radius: 32px;
+      }
+
+      .badge {
+        margin-bottom: 22px;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .shape {
+        animation: float 7s ease-in-out infinite alternate;
+      }
+
+      .circle-two {
+        animation-delay: -2s;
+      }
+
+      .diamond {
+        animation-delay: -4s;
+      }
+
+      @keyframes float {
+        from {
+          margin-top: -8px;
+        }
+
+        to {
+          margin-top: 8px;
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+
+    <div class="shape circle-one"></div>
+    <div class="shape circle-two"></div>
+    <div class="shape pill-one"></div>
+    <div class="shape pill-two"></div>
+    <div class="shape square"></div>
+    <div class="shape small-circle"></div>
+    <div class="shape diamond"></div>
+
+    <section class="content" aria-labelledby="title">
+
+      <h1 id="title">
+        Something <span class="highlight">new</span> is taking shape.
+      </h1>
+
+      <div class="footer">
+        © William Cranston 2026
+      </div>
+
+    </section>
+  </main>
+</body>
 </html>
