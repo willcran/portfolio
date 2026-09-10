@@ -1,43 +1,109 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>William Cranston</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/styles.css" />
-
-    <link rel="icon" type="image/x-icon" href="/assets/logo/favicon.png">
-  </head>
-
-  <body>
-    <header>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="desktop-header">
         <nav>
-          <ul class="left-buttons">
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">LinkedIn</a></li>
-            <li><a href="#">GitHub</a></li>
-          </ul>
+            <div class="desktop-left">
+                <div class="dropdown">
+                    <button class="nav-button">Socials <img class="nav-icon" src="/assets/dropdown.png" alt=""></button>
+                    <div class="dropdown-menu">
+                        <a href="#">GitHub</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Instagram</a>
+                    </div>
+                </div>
 
-          <ul class="right-buttons">
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">About</a></li>
-          </ul>
+                <div class="dropdown">
+                    <button class="nav-button">Projects <img class="nav-icon" src="/assets/dropdown.png" alt=""></button>
+                    <div class="dropdown-menu">
+                        <a href="projects.html">Project 1</a>
+                        <a href="#">Project 2</a>
+                        <a href="#">Project 3</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="nav-button">Misc <img class="nav-icon" src="/assets/dropdown.png" alt=""></button>
+                    <div class="dropdown-menu">
+                        <a href="#">Page 01</a>
+                        <a href="#">Page 02</a>
+                        <a href="#">Page 03</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="desktop-right">
+                <a href="index.html">About</a>
+                <a class="contact-button" href="#">Contact</a>
+            </div>
         </nav>
     </header>
 
+    <header class="mobile-header">
+        <button class="mobile-menu-button" onclick="toggleMenu()">=</button>
+        <div class="mobile-right">
+            <a href="index.html">About</a>
+            <a class="contact-button" href="#">Contact</a>
+        </div>
+    </header>
 
-    <div class="content">
-      <h1 class="greeting-text" style="justify-content: start;">Hello, I'm Will,</h1>
-      <p class="subtitle-text">a developer proficient in HTML / CSS, JavaScript, Python, C and Kotlin</p>
-
-      
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-column">
+            <div>
+                <strong>Socials</strong>
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+            </div>
+            <div>
+                <strong>Projects</strong>
+                <a href="projects.html">Project 01</a>
+                <a href="#">Project 02</a>
+                <a href="#">Project 03</a>
+            </div>
+            <div>
+                <strong>Misc</strong>
+                <a href="#">Page 01</a>
+                <a href="#">Page 02</a>
+                <a href="#">Page 03</a>
+            </div>
+        </div>
+        <p class="copyright">© William Cameron 2026</p>
     </div>
 
-    
-    <footer>
-        <p>Test text</p>
-    </footer>
-  </body>
+    <main class="home">
+        <section class="intro">
+            <h1>Hi, I'm Will</h1>
+            <p>I'm a developer proficient in HTML / CSS,<br>JavaScript, C, and more!</p>
 
+            <div class="search-box">
+                <input type="text" placeholder="Search">
+                <img src="images/icon-placeholder.svg" alt="">
+            </div>
+        </section>
+
+        <section class="home-projects">
+            <div class="section-title">
+                <span>Projects</span>
+                <a href="projects.html">></a>
+            </div>
+
+            <a class="project-placeholder" href="projects.html">
+                <img src="images/image-placeholder.svg" alt="Project image placeholder">
+            </a>
+
+            <a class="project-placeholder" href="projects.html">
+                <img src="images/image-placeholder.svg" alt="Project image placeholder">
+            </a>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
 </html>
