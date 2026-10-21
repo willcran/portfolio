@@ -32,7 +32,7 @@
       }
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-snap-type: y proximity; }
     body {
       margin: 0;
       background: var(--bg);
@@ -48,13 +48,27 @@
     .wordmark span { color: var(--muted); }
     .nav-links { display:flex; gap:24px; color:var(--muted); font-size:.9rem; }
     .nav-links a:hover, .text-link:hover { color:var(--text); }
-    .hero { padding: 76px 0 58px; }
-    .profile { display:grid; grid-template-columns: 116px 1fr; align-items:center; gap:28px; }
-    .avatar { width:116px; height:116px; border-radius:22px; object-fit:cover; border:1px solid var(--border); background:var(--panel); }
+    .hero {
+      min-height: calc(100svh - 73px);
+      padding: 64px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      scroll-snap-align: start;
+    }
+    .profile {
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:22px;
+      text-align:center;
+    }
+    .avatar { width:124px; height:124px; border-radius:24px; object-fit:cover; border:1px solid var(--border); background:var(--panel); }
+    .profile > div { display:flex; flex-direction:column; align-items:center; }
     .eyebrow { color:var(--muted); text-transform:uppercase; font-size:.74rem; letter-spacing:.14em; font-weight:750; margin:0 0 8px; }
     h1 { font-size:clamp(2.2rem, 6vw, 4rem); line-height:1.05; letter-spacing:-.065em; margin:0; overflow-wrap:anywhere; }
-    .bio { max-width:690px; color:var(--muted); font-size:1.05rem; margin:16px 0 0; white-space:pre-line; }
-    .profile-links { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+    .bio { max-width:690px; color:var(--muted); font-size:1.05rem; margin:16px auto 0; white-space:pre-line; }
+    .profile-links { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:22px; }
     .button { display:inline-flex; align-items:center; justify-content:center; gap:9px; border:1px solid var(--border); border-radius:8px; padding:10px 14px; font-size:.9rem; font-weight:650; background:var(--panel); transition:background .15s ease, border-color .15s ease; }
     .button:hover { background:var(--panel-hover); border-color:var(--muted); }
     .button.primary { background:var(--text); color:var(--bg); border-color:var(--text); }
@@ -65,7 +79,7 @@
     .stats { display:flex; flex-wrap:wrap; gap:8px; margin:30px 0 0; }
     .stat { border:1px solid var(--border); background:var(--panel); padding:7px 11px; border-radius:7px; color:var(--muted); font-size:.82rem; }
     .stat strong { color:var(--text); margin-right:5px; }
-    .projects { padding: 10px 0 84px; }
+    .projects { padding: 64px 0 84px; scroll-snap-align: start; }
     .controls { display:flex; gap:10px; margin-bottom:20px; }
     input, select { min-height:44px; background:var(--panel); color:var(--text); border:1px solid var(--border); border-radius:8px; padding:0 13px; font:inherit; font-size:.9rem; }
     input { flex:1; min-width:0; }
@@ -93,16 +107,19 @@
     @media (max-width:560px) {
       .wrap { width:min(100% - 28px, 1100px); }
       .nav-links { gap:14px; }
-      .hero { padding:48px 0 42px; }
-      .profile { grid-template-columns:76px 1fr; gap:17px; align-items:start; }
-      .avatar { width:76px; height:76px; border-radius:15px; }
-      .bio { font-size:.96rem; }
+      .hero {
+        min-height: calc(100svh - 69px);
+        padding: 36px 0;
+      }
+      .profile { gap:20px; }
+      .avatar { width:96px; height:96px; border-radius:20px; }
+      .bio { font-size:.96rem; max-width:34rem; }
       .grid { grid-template-columns:1fr; }
       .controls { flex-direction:column; }
       select { max-width:none; width:100%; }
       .section-head { align-items:start; flex-direction:column; }
     }
-    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto !important; animation:none !important; transition:none !important; } }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto !important; scroll-snap-type:none !important; animation:none !important; transition:none !important; } }
   </style>
 </head>
 <body>
