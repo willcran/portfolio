@@ -105,8 +105,6 @@ async function loadPortfolio() {
         );
 
         const profile = await profileResponse.json();
-
-        document.title = `${profile.name || profile.login} — Developer Portfolio`;
         document.querySelector('meta[name="description"]').content =
             profile.bio || `Projects and open-source work by ${profile.login}.`;
 
